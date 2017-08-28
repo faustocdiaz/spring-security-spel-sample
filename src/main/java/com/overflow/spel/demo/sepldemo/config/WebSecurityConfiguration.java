@@ -38,7 +38,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/stores").authenticated()
+                .antMatchers("/stores").access("@webChecker.isLocalHost(authentication,request)")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

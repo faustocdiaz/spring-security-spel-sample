@@ -14,11 +14,7 @@ public class MySpringUser  extends User {
                 , true, true, true, authorities);
 
         this.setUser(myUser);
-        
-
-
     }
-
 
     public MyUser getUser() {
         return user;
